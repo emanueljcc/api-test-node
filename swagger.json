@@ -1,0 +1,96 @@
+{
+	"swagger": "2.0",
+	"info": {
+		"version": "1.0.0",
+		"title": "Nodejs api test",
+		"description": "Nodejs api test",
+		"license": {
+			"name": "MIT",
+			"url": "https://opensource.org/licenses/MIT"
+		}
+	},
+	"host": "localhost:3001",
+	"basePath": "/",
+	"tags": [
+		{
+			"name": "Files",
+			"description": "API for files csv"
+		}
+	],
+	"schemes": [
+		"http"
+	],
+	"consumes": [
+		"application/json"
+	],
+	"produces": [
+		"application/json"
+	],
+	"paths": {
+		"/api/files/data?{fileName=fileName}": {
+			"get": {
+				"tags": [
+					"Files"
+				],
+				"summary": "Get all files",
+				"parameters": [
+          {
+            "name": "fileName",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "Find by file - default test: test2.csv"
+          }
+        ],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/Files"
+						}
+					}
+				}
+			}
+		},
+		"/api/files/list": {
+			"get": {
+				"tags": [
+					"Files"
+				],
+				"summary": "Get list files",
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/Files"
+						}
+					}
+				}
+			}
+		}
+	},
+	"definitions": {
+		"File": {
+			"required": [
+				"name",
+				"file",
+				"companies"
+			],
+			"properties": {
+				"file": {
+					"type": "string"
+				},
+				"lines": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
+				}
+			}
+		},
+		"Files": {
+			"type": "array",
+			"$ref": "#/definitions/File"
+		}
+	}
+}
