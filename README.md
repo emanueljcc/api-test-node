@@ -16,6 +16,7 @@ Lodash
 1. 1. Clone the repository: git clone https://github.com/emanueljcc/...
 1. 2. Install the dependencies: npm install or yarn install
 1. 3. Start the server: npm run dev or yarn dev
+1. 4. Start docker: docker-compose.yml
 ## **Use**
 Describes how to use the API to request csv files in .json format.
 ## **Documentation**
