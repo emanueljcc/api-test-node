@@ -1,0 +1,15 @@
+version: '3'
+services:
+  app:
+    container_name: node-app
+    image: node:14-alpine
+    working_dir: /usr/src/app
+    volumes:
+      - .:/usr/src/app
+    command: node index.js
+    ports:
+      - "3001:3001"
+    environment:
+      - PORT=3001
+      - API_URL=https://echo-serv.tbxnet.com
+      - API_KEY=aSuperSecretKey
