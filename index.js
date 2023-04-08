@@ -17,7 +17,7 @@ app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
 
 // Routes
-app.use('/api/v1/files', require('./src/routes/v1'))
+app.use('/v1/api/files', require('./src/routes/v1'))
 
 app.use(
   '/',
