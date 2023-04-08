@@ -5,6 +5,11 @@ const swaggerUi = require('swagger-ui-express')
 
 const swaggerDocument = require('./swagger.json')
 
+const cors = require('cors');
+app.use(cors({
+	origin: '*'
+}));
+
 // config env
 require('dotenv').config()
 

@@ -68,7 +68,7 @@ const getCsvFiles = async (fileName = '') => {
     const result = promiseAll.filter(r => r)
     const findByFileName = result.find(r => r.file === fileName)
 
-		return _.isEmpty(fileName) ? result : findByFileName || []
+		return _.isEmpty(fileName) ? result : [findByFileName] || []
 	} catch (error) {
 		throw new Error(error);
 	}
