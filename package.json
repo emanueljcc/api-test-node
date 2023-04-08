@@ -4,6 +4,7 @@
   "description": "api rest test app",
   "main": "index.js",
   "scripts": {
+    "test": "mocha './src/**/*.test.js'",
     "dev": "nodemon index.js",
     "start": "node index.js",
     "lint": "./node_modules/.bin/standard",
@@ -15,6 +16,7 @@
   "author": "Emanuel Castillo",
   "license": "ISC",
   "dependencies": {
+    "chai-http": "^4.3.0",
     "cors": "^2.8.5",
     "csvtojson": "^2.0.10",
     "dotenv": "^16.0.3",
@@ -23,9 +25,12 @@
     "morgan": "^1.10.0",
     "node-fetch": "2",
     "request": "^2.88.2",
+    "sinon": "^15.0.3",
     "swagger-ui-express": "^4.6.2"
   },
   "devDependencies": {
+    "chai": "^4.3.7",
+    "mocha": "^10.2.0",
     "nodemon": "^2.0.22",
     "standard": "^17.0.0"
   },
