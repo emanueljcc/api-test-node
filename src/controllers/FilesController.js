@@ -18,7 +18,7 @@ const getAllFilesList = async () => {
 
     return files
   } catch (error) {
-		throw new Error(error);
+    throw new Error(error)
   }
 }
 
@@ -30,8 +30,8 @@ const getAllFilesList = async () => {
  * on whether `fileName` is empty or not.
  */
 const getCsvFiles = async (fileName = '') => {
-	try {
-		const files = await getAllFilesList()
+  try {
+    const files = await getAllFilesList()
 
     const urlLists = files.map((file) => `${API_URL}/v1/secret/file/${file}`)
 
@@ -68,10 +68,10 @@ const getCsvFiles = async (fileName = '') => {
     const result = promiseAll.filter(r => r)
     const findByFileName = result.find(r => r.file === fileName)
 
-		return _.isEmpty(fileName) ? result : [findByFileName] || []
-	} catch (error) {
-		throw new Error(error);
-	}
+    return _.isEmpty(fileName) ? result : [findByFileName] || []
+  } catch (error) {
+    throw new Error(error)
+  }
 }
 
-module.exports = { getAllFilesList, getCsvFiles };
+module.exports = { getAllFilesList, getCsvFiles }

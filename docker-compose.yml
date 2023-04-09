@@ -2,10 +2,14 @@ version: '3'
 services:
   app:
     container_name: node-app
+    build:
+      context: .
+      dockerfile: Dockerfile
     image: node:14-alpine
     working_dir: /usr/src/app
     volumes:
       - .:/usr/src/app
+      - /usr/src/app/node_modules
     command: node index.js
     ports:
       - "3001:3001"

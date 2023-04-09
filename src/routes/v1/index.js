@@ -1,6 +1,5 @@
 const { Router } = require('express')
 const router = Router()
-const _ = require('lodash')
 
 const HttpStatusCode = require('../../config/HttpStatusCode')
 
@@ -11,7 +10,7 @@ router.get('/data', async (req, res) => {
   try {
     const { fileName } = req.query
 
-		const data = await getCsvFiles(fileName);
+    const data = await getCsvFiles(fileName)
 
     res
       .status(HttpStatusCode.OK)
