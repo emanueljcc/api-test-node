@@ -18,7 +18,7 @@ Lodash
 1. 3. Start the server: npm run dev or yarn dev
 
 ## **Instalation DOCKER**
-1. 1. Run with docker: docker-compose up --build
+1. Run with docker: docker-compose up --build
 
 ## **Use**
 Describes how to use the API to request csv files in .json format.
