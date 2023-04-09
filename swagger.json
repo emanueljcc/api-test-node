@@ -13,7 +13,7 @@
 	"basePath": "/",
 	"tags": [
 		{
-			"name": "Files",
+			"name": "v1/Files",
 			"description": "API for files csv"
 		}
 	],
@@ -27,10 +27,10 @@
 		"application/json"
 	],
 	"paths": {
-		"/api/files/data?{fileName=fileName}": {
+		"/v1/api/files/data?{fileName=fileName}": {
 			"get": {
 				"tags": [
-					"Files"
+					"v1/Files"
 				],
 				"summary": "Get all files",
 				"parameters": [
@@ -52,10 +52,10 @@
 				}
 			}
 		},
-		"/api/files/list": {
+		"/v1/api/files/list": {
 			"get": {
 				"tags": [
-					"Files"
+					"v1/Files"
 				],
 				"summary": "Get list files",
 				"responses": {
