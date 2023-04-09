@@ -1,39 +1,31 @@
-const express = require('express')
-const app = express()
-const morgan = require('morgan')
-const swaggerUi = require('swagger-ui-express')
-
-const swaggerDocument = require('./swagger.json')
-
-const cors = require('cors')
-app.use(cors({
-  origin: '*'
-}))
+const express = require('express');
+const morgan = require('morgan');
+const swaggerUi = require('swagger-ui-express');
+const cors = require('cors');
+const swaggerDocument = require('./swagger.json');
 
 // config env
-require('dotenv').config()
+require('dotenv').config();
 
-// Settings
-app.set('port', process.env.PORT || 3001)
+const v1Router = require('./src/routes/v1');
+
+const app = express();
+
+app.use(cors({origin: '*'}));
 
 // Middleware
-app.use(morgan('dev'))
-app.use(express.urlencoded({ extended: false }))
-app.use(express.json())
+app.use(morgan('dev'));
+app.use(express.urlencoded({extended: false}));
+app.use(express.json());
 
 // Routes
-app.use('/v1/api/files', require('./src/routes/v1'))
+app.use('/v1/api/files', v1Router);
+// configure swagger
+app.use('/', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
-app.use(
-  '/',
-  swaggerUi.serve,
-  swaggerUi.setup(swaggerDocument)
-)
+const PORT = process.env.PORT || 3001;
 
 // Starting the server
-app.listen(app.get('port'), () => {
-  console.log(`Server listening on port ${app.get('port')}`)
-}
-)
+app.listen(PORT, () => console.log(`Server listening on port ${PORT}`));
 
-module.exports = app
+module.exports = app;

@@ -12,10 +12,8 @@ const API_URL = process.env.API_URL
 
 const getAllFilesList = async () => {
   try {
-    const getFiles = await fetch(`${API_URL}/v1/secret/files`, headers)
-    const data = await getFiles.json()
-    const files = data.files
-
+    const response = await fetch(`${API_URL}/v1/secret/files`, headers)
+    const { files } = await response.json()
     return files
   } catch (error) {
     throw new Error(error)
