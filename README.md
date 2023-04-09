@@ -26,6 +26,7 @@ csvtojson
 
 ## **Documentation**
 **The API documentation is available on Swagger at the following link: http://localhost:3001/**
+[![Swagger](https://i.ibb.co/BBvbhwG/Captura-de-pantalla-2023-04-09-a-la-s-11-47-43-a-m.png "Swagger")](https://i.ibb.co/BBvbhwG/Captura-de-pantalla-2023-04-09-a-la-s-11-47-43-a-m.png "Swagger")
 ## **Use**
 Describes how to use the API to request csv files in .json format.
 ## **License**
